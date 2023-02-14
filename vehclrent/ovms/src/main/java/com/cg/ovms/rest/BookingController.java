@@ -41,8 +41,7 @@ public class BookingController {
 
 	@PostMapping("/addBooking")
 	public ResponseEntity<String> addBooking(@RequestBody Booking booking) {
-		bookingService.addBooking(booking);
-		return ResponseEntity.ok("Added booking");
+		return bookingService.getBookingsById(bookingId);
 	}
 
 	@PostMapping(value = "/addNewBookingByUserId/{id}", consumes = { "application/json" })
